@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.vazirmatn {
+    font-family: "Vazirmatn", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  *{
+    font-family: "Vazirmatn", sans-serif;
+
+  }
