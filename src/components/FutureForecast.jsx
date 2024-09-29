@@ -1,6 +1,6 @@
 import React from 'react';
-import image from '../assets/image.png';
-import image2 from '../assets/image-2.png';
+import image from '../assets/Image.png';
+import image2 from '../assets/Image-2.png';
 import image3 from '../assets/sunny.png';
 
 const FutureForecast = () => {
