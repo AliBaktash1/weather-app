@@ -27,7 +27,7 @@ const WeatherDetails = ({ city }) => {
   return (
     <>
     <img src={`http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`} className='w-24 h-24 mx-auto' alt="" />
-            <h1 className='text-[75px] font-bold text-center'>{main.temp}°</h1>
+            <h1 className='text-[70px] font-bold text-center'>{main.temp}°</h1>
             <small dir='rtl' className='text-center'>{`${currentDay}`} {`${city}`} </small>
             <div className="flex flex-col border rounded-lg p-6 gap-7">
                 <div className="flex justify-between">
