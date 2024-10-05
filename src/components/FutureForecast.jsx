@@ -10,21 +10,20 @@ const FutureForecast = ({city}) => {
   useEffect(() => {
     const fetchForecast = async () => {
       try {
-        const apiKey = 'f0f549c5beda7f8c58510f44fe5aef7c'; // Replace with your OpenWeather API key
+        const apiKey = 'f0f549c5beda7f8c58510f44fe5aef7c'; 
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
-        // Extract data for the upcoming days (filtering for one forecast per day)
         const dailyForecast = response.data.list.filter((forecast) => forecast.dt_txt.includes('12:00:00'));
-        setForecastData(dailyForecast); // Set the filtered forecast data
+        setForecastData(dailyForecast);
       } catch (error) {
         console.error("Error fetching forecast data:", error);
       }
     };
 
     fetchForecast();
-  }, [city]); // Fetch data whenever the city changes
+  }, [city]); 
 
   if (!forecastData.length) {
-    return <p>در حال بارگذاری پیش بینی هوا...</p>; // Show loading state
+    return <p>در حال بارگذاری پیش بینی هوا...</p>;
   }
   return (
     <div className="flex justify-between text-center">

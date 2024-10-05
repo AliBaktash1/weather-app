@@ -7,7 +7,7 @@ const Header = ({ onCityChange }) => {
   const handleCityChange = (e) => {
     const city = e.target.value;
     setSelectedCity(city);
-    onCityChange(city); // Pass the selected city to the parent component
+    onCityChange(city); 
   };
   return (
     <header className='flex flex-row justify-between px-6 pt-4 '>

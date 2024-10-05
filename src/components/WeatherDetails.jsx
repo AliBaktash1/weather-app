@@ -10,9 +10,9 @@ const WeatherDetails = ({ city }) => {
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        const apiKey = 'f0f549c5beda7f8c58510f44fe5aef7c'; // Replace with your OpenWeather API key
+        const apiKey = 'f0f549c5beda7f8c58510f44fe5aef7c';
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
-        setWeatherData(response.data); // Set the fetched data
+        setWeatherData(response.data); 
       } catch (error) {
         console.error("Error fetching weather data:", error);
       }
@@ -21,7 +21,7 @@ const WeatherDetails = ({ city }) => {
     fetchWeather();
   }, [city]);
   if (!weatherData) {
-    return <p>در حال بارگذاری اطلاعات...</p>; // Show loading state
+    return <p>در حال بارگذاری اطلاعات...</p>; 
   }
   const { main, wind, weather } = weatherData;
   return (
