@@ -1,13 +1,21 @@
-import React from 'react';
-import logo from '../assets/Logo.png';
 
-const Header = () => {
+import logo from '../assets/Logo.png';
+import { useState } from "react";
+const Header = ({ onCityChange }) => {
+  const [selectedCity, setSelectedCity] = useState('tehran');
+
+  const handleCityChange = (e) => {
+    const city = e.target.value;
+    setSelectedCity(city);
+    onCityChange(city); // Pass the selected city to the parent component
+  };
   return (
-    <header className='flex flex-row justify-between p-6 '>
+    <header className='flex flex-row justify-between px-6 pt-4 '>
     <section className="rt">
       <img src="./assets/log" alt="" />
-      <select name="cities" id="cities" className="px-5 py-2 rounded-3xl">
-<option value="none" disabled selected className="text-gray-100 outline-none focus:outline-none">
+      <select name="cities" id="cities" className="px-5 py-2 rounded-3xl" value={selectedCity}
+          onChange={handleCityChange}>
+<option value="none" disabled className="text-gray-100 outline-none focus:outline-none">
   انتخاب شهرها
 </option>
 <option value="tehran">تهران</option>
