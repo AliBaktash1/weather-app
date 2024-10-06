@@ -10,7 +10,7 @@ const FutureForecast = ({city}) => {
   useEffect(() => {
     const fetchForecast = async () => {
       try {
-        const apiKey = 'f0f549c5beda7f8c58510f44fe5aef7c'; 
+        const apiKey = '3eff71563e3734cceb572bf28d6c605b'; 
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
         const dailyForecast = response.data.list.filter((forecast) => forecast.dt_txt.includes('12:00:00'));
         setForecastData(dailyForecast);
